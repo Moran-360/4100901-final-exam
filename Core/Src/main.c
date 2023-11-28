@@ -96,7 +96,7 @@ int main(void)
   ssd1306_Init();
   ssd1306_Fill (Negro);
   ssd1306_SetCursor(20, 20);
-  ssd1306_WriteString("¡Hola Mundo!", Font_7x10, Blanco);
+  ssd1306_WriteString("waiting", Font_7x10, Blanco);
   ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
