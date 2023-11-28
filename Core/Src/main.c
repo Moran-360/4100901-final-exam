@@ -89,7 +89,15 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  ring_buffer_init(&ring_buffer_uart_rx, rx_buffer, 16);
 
+  HAL_UART_Receive_IT(&huart2, &rx_data, 1);
+
+  ssd1306_Init();
+  ssd1306_Fill (Negro);
+  ssd1306_SetCursor(20, 20);
+  ssd1306_WriteString("¡Hola Mundo!", Font_7x10, Blanco);
+  ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
   /* Infinite loop */
